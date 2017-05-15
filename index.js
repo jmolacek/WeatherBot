@@ -16,7 +16,7 @@ app.all('/weather', function(request, response) {
 
         var temp = result[0].current.temperature;
         var wind = result[0].current.windspeed;
-        var sendString = "It's almost time for lunch! \nThe temp right now in Olathe, KS is " + temp + ".\n" + "The wind speed is " + wind + ".";
+        var sendString = "The temp right now in Olathe, KS is " + temp + ".\n" + "The wind speed is " + wind + ".";
 
         response.send({
             "color": "green",
