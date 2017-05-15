@@ -18,7 +18,12 @@ app.get('/weather', function(request, response) {
         var wind = result[0].current.windspeed;
         var sendString = "It's almost time for lunch! \nThe temp right now in Olathe, KS is " + temp + ".\n" + "The wind speed is " + wind + ".";
 
-        response.send(sendString);
+        response.send({
+            "color": "green",
+            "message": sendString,
+            "notify": false,
+            "message_format": "text"
+        });
     });
 })
 
