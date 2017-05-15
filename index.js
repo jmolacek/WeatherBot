@@ -10,7 +10,7 @@ app.get('/', function(request, response) {
   response.send('Hello World!')
 })
 
-app.get('/weather', function(request, response) {
+app.all('/weather', function(request, response) {
     weather.find({search: 'Olathe, KS', degreeType: 'F'}, function(err, result) {
         if(err) console.log(err);
 
