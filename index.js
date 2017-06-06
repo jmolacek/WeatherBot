@@ -27,7 +27,7 @@ app.all('/weather', function(request, response) {
 
         response.send({
             "color": "green",
-            "message": sendString + '\n' + JSON.stringify(request.item.message.from),
+            "message": sendString + '\n' + JSON.stringify(request.body),
             "notify": false,
             "message_format": "text"
         });
