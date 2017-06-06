@@ -1,14 +1,20 @@
 var weather = require('weather-js');
+var bodyParser = require('body-parser');
+var express = require('express');
+var app = express();
 
-var express = require('express')
-var app = express()
+app.set('port', (process.env.PORT || 5000));
+app.use(express.static(__dirname + '/public'));
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
 
-app.set('port', (process.env.PORT || 5000))
-app.use(express.static(__dirname + '/public'))
+// parse application/json
+app.use(bodyParser.json())
 
 app.get('/', function(request, response) {
-  response.send('Hello World!')
-})
+
+    response.send('hi');
+});
 
 app.all('/weather', function(request, response) {
     weather.find({search: 'Olathe, KS', degreeType: 'F'}, function(err, result) {
@@ -21,7 +27,7 @@ app.all('/weather', function(request, response) {
 
         response.send({
             "color": "green",
-            "message": sendString,
+            "message": sendString + '\n' + JSON.stringify(request.item.message.from),
             "notify": false,
             "message_format": "text"
         });
