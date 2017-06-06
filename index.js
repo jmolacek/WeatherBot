@@ -25,12 +25,30 @@ app.all('/weather', function(request, response) {
         var skyText = result[0].current.skytext;
         var sendString = "The temp right now in Olathe, KS is " + temp + ".\n" + "The wind speed is " + wind + ".\n Looks like it\'s " + skyText + " out right now.";
 
-        response.send({
-            "color": "green",
-            "message": sendString + '\n' + JSON.stringify(request.body.item.message.from.name),
-            "notify": false,
-            "message_format": "text"
-        });
+
+        if(request.body.item.message.from.name == "Joshua Johnston") {
+            response.send({
+                "color": "green",
+                "message": "Hi Joshua, thanks for asking!\n" + sendString,
+                "notify": false,
+                "message_format": "text"
+            });
+        }else if (request.body.item.message.from.name == "Kyle Brennan") {
+            response.send({
+                "color": "red",
+                "message": "Access Denied",
+                "notify": false,
+                "message_format": "text"
+            });
+        }else if (request.body.item.message.from.name == "Jordan Molacek") {
+            response.send({
+                "color": "green",
+                "message": "A pleasure to assist you, master.\n" + sendString,
+                "notify": false,
+                "message_format": "text"
+            });
+        }
+
     });
 })
 
