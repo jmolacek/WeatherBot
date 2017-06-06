@@ -47,6 +47,13 @@ app.all('/weather', function(request, response) {
                 "notify": false,
                 "message_format": "text"
             });
+        }else {
+            response.send({
+                "color": "green",
+                "message": sendString,
+                "notify": false,
+                "message_format": "text"
+            });
         }
 
     });
