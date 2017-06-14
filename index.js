@@ -28,15 +28,15 @@ app.all('/weather', function(request, response) {
 
         if(request.body.item.message.from.name == "Joshua Johnston") {
             response.send({
-                "color": "green",
-                "message": "Hi Joshua, thanks for asking!\n" + sendString,
+                "color": "yellow",
+                "message": "fuck you",
                 "notify": false,
                 "message_format": "text"
             });
         }else if (request.body.item.message.from.name == "Kyle Brennan") {
             response.send({
-                "color": "red",
-                "message": "Access Denied",
+                "color": "green",
+                "message": "Thanks for asking Kyle.\n" + sendString,
                 "notify": false,
                 "message_format": "text"
             });
