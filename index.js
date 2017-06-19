@@ -13,7 +13,7 @@ app.use(bodyParser.json())
 
 app.get('/', function(request, response) {
 
-    response.send('hi');
+    response.send('hi, it\'s working');
 });
 
 app.all('/weather', function(request, response) {
