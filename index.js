@@ -28,8 +28,8 @@ app.all('/weather', function(request, response) {
 
         if(request.body.item.message.from.name == "Joshua Johnston") {
             response.send({
-                "color": "yellow",
-                "message": "fuck you",
+                "color": "green",
+                "message": ":)",
                 "notify": false,
                 "message_format": "text"
             });
