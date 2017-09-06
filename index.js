@@ -67,7 +67,7 @@ app.all('/weather', function(request, response) {
         }else if (request.body.item.message.from.name == "Kyle Brennan") {
             response.send({
                 "color": "green",
-                "message": "Thanks for asking Kyle.\n" + sendString,
+                "message": "Thanks for asking Kyle.\n" + "It's 100 degrees bruh.\n Skrrrtt.",
                 "notify": false,
                 "message_format": "text"
             });
