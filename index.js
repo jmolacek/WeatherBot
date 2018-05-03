@@ -43,7 +43,7 @@ app.all('/weather', function(request, response) {
         }else if (request.body.item.message.from.name == "Jordan Molacek") {
             response.send({
                 "color": "green",
-                "message": "A pleasure to assist you, master.\n" + sendString,
+                "message": "A pleasure to assist you, my master.\n" + sendString,
                 "notify": false,
                 "message_format": "text"
             });
