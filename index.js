@@ -63,17 +63,7 @@ app.all('/weather', function(request, response) {
 });
 
 app.post('/groupme', function(request, response) {
-    var parsedRequest = JSON.parse(request.chunks[0]);
-
-  if(parsedRequest.text && parsedRequest.user_id != 645304) {
-    response.writeHead(200);
-    postMessage(parsedRequest);
-    response.end();
-  } else {
-    console.log("don't care");
-    response.writeHead(200);
-    response.end();
-  }
+    postMessage(request);
 });
 
 app.get('/groupme', function(request, response) {
@@ -100,7 +90,8 @@ function postMessage(request) {
   //}
   var botResponse, options, body, botReq;
 
-  botResponse = "Oh I'm " + request.name + " and my user_id is " + request.user_id;
+  //botResponse = "Oh I'm " + request.name + " and my user_id is " + request.user_id;
+  botResponse = JSON.stringify(request);
 
   options = {
     hostname: 'api.groupme.com',
