@@ -66,13 +66,13 @@ app.post('/groupme', function(request, response) {
     var request = JSON.parse(this.req.chunks[0]);
 
   if(request.text && request.user_id != 645304) {
-    this.res.writeHead(200);
+    response.writeHead(200);
     postMessage(request);
-    this.res.end();
+    response.end();
   } else {
     console.log("don't care");
-    this.res.writeHead(200);
-    this.res.end();
+    response.writeHead(200);
+    response.end();
   }
 });
 
