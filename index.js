@@ -68,7 +68,7 @@ app.post('/groupme', function(request, response) {
 
 app.get('/groupme', function(request, response) {
     response.writeHead(200);
-    response.end("Hey, I'm Cool Guy 2.");
+    response.end(JSON.stringify(request));
 });
 
 function postMessage(request) {
