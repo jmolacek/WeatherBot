@@ -63,17 +63,22 @@ app.all('/weather', function(request, response) {
 });
 
 app.post('/groupme', function(request, response) {
-    var request = JSON.parse(this.req.chunks[0]);
+    var parsedRequest = JSON.parse(request.chunks[0]);
 
-  if(request.text && request.user_id != 645304) {
+  if(parsedRequest.text && parsedRequest.user_id != 645304) {
     response.writeHead(200);
-    postMessage(request);
+    postMessage(parsedRequest);
     response.end();
   } else {
     console.log("don't care");
     response.writeHead(200);
     response.end();
   }
+});
+
+app.get('/groupme', function(request, response) {
+    response.writeHead(200);
+    response.end("Hey, I'm Cool Guy 2.");
 });
 
 function postMessage(request) {
