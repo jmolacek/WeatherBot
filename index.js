@@ -19,7 +19,7 @@ app.get('/', function(request, response) {
     response.send('hi, it\'s working');
 });
 
-app.all('/weather', function(request, response) {
+app.post('/weather', function(request, response) {
     weather.find({search: 'Olathe, KS', degreeType: 'F'}, function(err, result) {
         if(err) console.log(err);
 
@@ -63,12 +63,14 @@ app.all('/weather', function(request, response) {
 });
 
 app.post('/groupme', function(request, response) {
-    postMessage(request);
+      var req = request.body;
+      response.writeHead(200);
+      response.end();
 });
 
 app.get('/groupme', function(request, response) {
     response.writeHead(200);
-    response.end(JSON.stringify(request));
+    response.end('group me get works');
 });
 
 function postMessage(request) {
@@ -91,7 +93,7 @@ function postMessage(request) {
   var botResponse, options, body, botReq;
 
   //botResponse = "Oh I'm " + request.name + " and my user_id is " + request.user_id;
-  botResponse = JSON.stringify(request);
+  botResponse = 'testing';
 
   options = {
     hostname: 'api.groupme.com',
