@@ -64,6 +64,7 @@ app.post('/weather', function(request, response) {
 
 app.post('/groupme', function(request, response) {
       var req = request.body;
+      console.log(req);
       response.writeHead(200);
       response.end();
 });
