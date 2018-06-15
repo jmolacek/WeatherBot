@@ -91,6 +91,9 @@ function postMessage(request) {
   //"text": "Hello world ☃☃",
   //"user_id": "1234567890"
   //}
+  //645304 - id
+  //8d4d34f052db013606b422000ae1953d - guid
+  //645304 - user id
   var botResponse, options, body, botReq;
 
   //botResponse = "Oh I'm " + request.name + " and my user_id is " + request.user_id;
