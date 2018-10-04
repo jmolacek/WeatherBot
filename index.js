@@ -33,7 +33,7 @@ app.post('/weather', function(request, response) {
         if(request.body.item.message.from.name == "Joshua Johnston") {
             response.send({
                 "color": "green",
-                "message": "You're basic Josh, don't use my service.",
+                "message": "Josh, you're the man.\n" + sendString,
                 "notify": false,
                 "message_format": "text"
             });
