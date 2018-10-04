@@ -27,7 +27,8 @@ app.post('/weather', function(request, response) {
         var wind = result[0].current.windspeed;
         var skyText = result[0].current.skytext;
         var sendString = "The temp right now in Olathe, KS is " + temp + ".\n" + "The wind speed is " + wind + ".\n Looks like it\'s " + skyText + " out right now.";
-
+        var randomNumber = Math.floor((Math.random() * 5));
+        var snarkyResponses = ["Myabe next time my guy.", "Lol you thought bruh.", "Don't matter bruh.", "Don't ask me that Justin.", "Skrrrt, go away."];
 
         if(request.body.item.message.from.name == "Joshua Johnston") {
             response.send({
@@ -36,10 +37,10 @@ app.post('/weather', function(request, response) {
                 "notify": false,
                 "message_format": "text"
             });
-        }else if (request.body.item.message.from.name == "Kyle Brennan") {
+        }else if (request.body.item.message.from.name == "Justin Ford") {
             response.send({
                 "color": "green",
-                "message": "Thanks for asking Kyle, I will gladly help you.\n" + sendString,
+                "message": snarkyResponses[randomNumber],
                 "notify": false,
                 "message_format": "text"
             });
