@@ -40,7 +40,7 @@ app.post('/weather', function(request, response) {
         }else if (request.body.item.message.from.name == "Justin Ford") {
             response.send({
                 "color": "green",
-                "message": snarkyResponses[randomNumber],
+                "message": "https://scontent-dfw5-2.xx.fbcdn.net/v/t1.0-9/200452_4100273578802_432688113_n.jpg?_nc_cat=107&oh=1ee8552468478f776327d5395ad39c61&oe=5C58D90A" //snarkyResponses[randomNumber],
                 "notify": false,
                 "message_format": "text"
             });
