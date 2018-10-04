@@ -27,7 +27,7 @@ app.post('/weather', function(request, response) {
         var wind = result[0].current.windspeed;
         var skyText = result[0].current.skytext;
         var sendString = "The temp right now in Olathe, KS is " + temp + ".\n" + "The wind speed is " + wind + ".\n Looks like it\'s " + skyText + " out right now.";
-        var randomNumber = Math.floor((Math.random() * 5));
+        var randomNumber = Math.floor((Math.random() * 4));
         var snarkyResponses = ["Myabe next time my guy.", "Lol you thought bruh.", "Don't matter bruh.", "Don't ask me that Justin.", "Skrrrt, go away."];
 
         if(request.body.item.message.from.name == "Joshua Johnston") {
